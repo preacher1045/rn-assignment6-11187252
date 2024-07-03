@@ -10,18 +10,18 @@ const Index = ({ navigation }) => {
         const hasNext = index + 1 < data.length;
 
         return (
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 10 }}>
-                <TouchableOpacity style={{ flex: 1 }} onPress={() => addToCart(item)}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 20 }}>
+                <TouchableOpacity style={{ flex: 1, marginBottom: 20, marginTop: 10 }} onPress={() => addToCart(item)}>
                     <Image source={item.image} />
                     <Text>{item.title}</Text>
-                    <Text>{item.subtitle}</Text>
+                    <Text style={{color: '#8a8988'}}>{item.subtitle}</Text>
                     <Text style={{color:'#e37622'}}>${item.price}</Text>
                 </TouchableOpacity>
                 {hasNext && (
-                    <TouchableOpacity style={{ flex: 1 }} onPress={() => addToCart(data[index + 1])}>
+                    <TouchableOpacity style={{ flex: 1,  marginBottom: 20, marginTop: 10 }} onPress={() => addToCart(data[index + 1])}>
                         <Image source={data[index + 1].image} />
                         <Text>{data[index + 1].title}</Text>
-                        <Text>{data[index + 1].subtitle}</Text>
+                        <Text style={{color: '#8a8988'}}>{data[index + 1].subtitle}</Text>
                         <Text style={{color: '#e37622'}}>${data[index + 1].price}</Text>
                     </TouchableOpacity>
                 )}
